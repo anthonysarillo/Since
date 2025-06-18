@@ -51,6 +51,7 @@ The Game Dev Cave,
 so many more people on YouTube/the Interwebs that have helped me learn. Thank you.
 
 //====== // ABOUT THE PROJECT // ====== //
+
 It's a mix-up of the people who have helped me learn and grow the most, and what I personally like.
 Tim Cains philosophy/knowledge/HARD FUCKING work/ and everything else on video games in general.
 George Pences (YouTube) Core Systems tutorial.
