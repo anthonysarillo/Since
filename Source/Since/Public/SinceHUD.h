@@ -4,6 +4,7 @@
 #include "GameFramework/HUD.h"
 #include "SinceHUD.generated.h"
 
+class UCrosshairBracketsWidget;
 class UCrosshairWidget;
 struct FCombatantData;
 class UCombatWidget;
@@ -26,6 +27,12 @@ public:
 	void ShowCrosshairWidget() const;
 	void HideCrosshairWidget() const;
 
+	// CROSSHAIR BRACKETS WIDGET
+	UPROPERTY(EditDefaultsOnly, Category="Widgets")
+	TSubclassOf<UCrosshairBracketsWidget> CrosshairBracketsClass;
+	void ShowBrackets() const;
+	void HideBrackets() const;
+	
 	// INTERACTION WIDGET
 	UPROPERTY(EditDefaultsOnly, Category="Widgets")
 	TSubclassOf<UInteractionWidget> InteractionWidgetClass;
@@ -49,6 +56,10 @@ protected:
 	// CROSSHAIR WIDGET
 	UPROPERTY()
 	TObjectPtr<UCrosshairWidget> CrosshairWidget;
+
+	// CROSSHAIR BRACKETS WIDGET
+	UPROPERTY()
+	TObjectPtr<UCrosshairBracketsWidget> CrosshairBracketsWidget;
 
 	// INTERACTION WIDGET
 	UPROPERTY()

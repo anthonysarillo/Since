@@ -115,9 +115,6 @@ protected:
 	UPROPERTY(EditDefaultsOnly, Category="Interaction")
 	float InteractionCheckDistance;
 
-	UPROPERTY(EditDefaultsOnly,Category="Interaction")
-	float LookDirection;
-
 	FTimerHandle TimerHandle_Interaction;
 	FInteractionData InteractionData;
 

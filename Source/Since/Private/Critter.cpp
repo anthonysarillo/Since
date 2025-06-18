@@ -21,8 +21,7 @@ ACritter::ACritter()
 	// INTERACTION
 	InteractionCheckFrequency = 0.1f;
 	InteractionCheckDistance = 250.0f;
-	LookDirection = FVector::DotProduct(GetActorForwardVector(), APawn::GetViewRotation().Vector());
-
+	
 	// COMBAT
 	CombatCheckFrequency = 0.1f;
 	CombatCheckDistance = 1000.0f;
@@ -96,8 +95,10 @@ void ACritter::PerformInteractionCheck()
 	FVector End{Start + (GetViewRotation().Vector() * InteractionCheckDistance)};
 	FCollisionQueryParams QueryParams;
 	QueryParams.AddIgnoredActor(this);
+
+	float LookDirection = FVector::DotProduct(GetActorForwardVector(), GetViewRotation().Vector());
 	
-	if (LookDirection > 0)
+	if (LookDirection > .25)
 	{
 		//DrawDebugLine(GetWorld(), Start, End, FColor::White, false, .1, 0, .5);
 	}
@@ -105,7 +106,7 @@ void ACritter::PerformInteractionCheck()
 	{
 		if (Hit.GetActor()->GetClass()->ImplementsInterface(UInteractionInterface::StaticClass()))
 		{
-			if (Hit.GetActor() != InteractionData.CurrentInteractable)
+			if (Hit.GetActor() != InteractionData.CurrentInteractable && LookDirection > .25)
 			{
 				FoundInteractable(Hit.GetActor());
 
@@ -139,6 +140,7 @@ void ACritter::FoundInteractable(AActor* NewInteractable)
 	TargetInteractable = NewInteractable;
 
 	HUD->UpdateInteractionWidget(&TargetInteractable->InteractableData);
+	HUD->ShowBrackets();
 
 	TargetInteractable->BeginFocus();
 }
@@ -157,6 +159,7 @@ void ACritter::NoInteractableFound()
 			EndInteract();
 		}
 		HUD->HideInteractionWidget();
+		HUD->HideBrackets();
 
 		InteractionData.CurrentInteractable = nullptr;
 		TargetInteractable = nullptr;
@@ -228,7 +231,9 @@ void ACritter::PerformCombatCheck()
 	FCollisionQueryParams QueryParams;
 	QueryParams.AddIgnoredActor(this);
 
-	if (LookDirection > 0)
+	float LookDirection = FVector::DotProduct(GetActorForwardVector(), GetViewRotation().Vector());
+
+	if (LookDirection > .75)
 	{
 		//DrawDebugLine(GetWorld(), Start, End, FColor::White, false, .1, 0, .5);
 	}
@@ -236,7 +241,7 @@ void ACritter::PerformCombatCheck()
 	{
 		if (Hit.GetActor()->GetClass()->ImplementsInterface(UCombatInterface::StaticClass()))
 		{
-			if (Hit.GetActor() != CombatData.CurrentCombatant)
+			if (Hit.GetActor() != CombatData.CurrentCombatant && LookDirection > .75)
 			{
 				FoundCombatant(Hit.GetActor());
 
@@ -270,6 +275,7 @@ void ACritter::FoundCombatant(AActor* NewCombatant)
 	TargetCombatant = NewCombatant;
 
 	HUD->UpdateCombatWidget(&TargetCombatant->CombatantData);
+	HUD->ShowBrackets();
 
 	TargetCombatant->BeginTargeting();
 }
@@ -288,6 +294,7 @@ void ACritter::NoCombatantFound()
 			EndCombat();
 		}
 		HUD->HideCombatWidget();
+		HUD->HideBrackets();
 
 		CombatData.CurrentCombatant = nullptr;
 		TargetCombatant = nullptr;
@@ -375,6 +382,8 @@ FVector ACritter::GetPawnViewLocation() const
 {
 	return ThirdPersonCamera->GetComponentLocation();
 }
+
+
 
 
 

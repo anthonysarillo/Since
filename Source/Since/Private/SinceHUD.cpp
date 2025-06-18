@@ -1,6 +1,7 @@
 // GAME
 #include "SinceHUD.h"
 #include "CombatWidget.h"
+#include "CrosshairBracketsWidget.h"
 #include "CrosshairWidget.h"
 #include "InteractionWidget.h"
 
@@ -17,20 +18,27 @@ void ASinceHUD::BeginPlay()
 	if (CrosshairWidgetClass)
 	{
 		CrosshairWidget = CreateWidget<UCrosshairWidget>(GetWorld(), CrosshairWidgetClass);
-		CrosshairWidget->AddToViewport(0);
+		CrosshairWidget->AddToViewport(4);
 		CrosshairWidget->SetVisibility(ESlateVisibility::Visible);
+	}
+
+	if (CrosshairBracketsClass)
+	{
+		CrosshairBracketsWidget = CreateWidget<UCrosshairBracketsWidget>(GetWorld(), CrosshairBracketsClass);
+		CrosshairBracketsWidget->AddToViewport(3);
+		CrosshairBracketsWidget->SetVisibility(ESlateVisibility::Collapsed);
 	}
 
 	if (InteractionWidgetClass)
 	{
 		InteractionWidget = CreateWidget<UInteractionWidget>(GetWorld(), InteractionWidgetClass);
-		InteractionWidget->AddToViewport(-1);
+		InteractionWidget->AddToViewport(2);
 		InteractionWidget->SetVisibility(ESlateVisibility::Collapsed);
 	}
 	if (CombatWidgetClass)
 	{
 		CombatWidget = CreateWidget<UCombatWidget>(GetWorld(), CombatWidgetClass);
-		CombatWidget->AddToViewport(-2);
+		CombatWidget->AddToViewport(1);
 		CombatWidget->SetVisibility(ESlateVisibility::Collapsed);
 	}
 }
@@ -48,6 +56,22 @@ void ASinceHUD::HideCrosshairWidget() const
 	if (CrosshairWidget)
 	{
 		CrosshairWidget->SetVisibility(ESlateVisibility::Collapsed);
+	}
+}
+
+void ASinceHUD::ShowBrackets() const
+{
+	if (CrosshairBracketsWidget)
+	{
+		CrosshairBracketsWidget->SetVisibility(ESlateVisibility::Visible);
+	}
+}
+
+void ASinceHUD::HideBrackets() const
+{
+	if (CrosshairBracketsWidget)
+	{
+		CrosshairBracketsWidget->SetVisibility(ESlateVisibility::Collapsed);
 	}
 }
 

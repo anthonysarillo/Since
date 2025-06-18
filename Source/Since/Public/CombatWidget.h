@@ -4,6 +4,7 @@
 #include "Blueprint/UserWidget.h"
 #include "CombatWidget.generated.h"
 
+class UProgressBar;
 struct FCombatantData;
 class UTextBlock;
 class ACritter;
@@ -25,4 +26,7 @@ protected:
 
 	UPROPERTY(EditDefaultsOnly, meta = (BindWidget), Category="Combat Widget | Data")
 	TObjectPtr<UTextBlock> Name;
+
+	UPROPERTY(EditDefaultsOnly, meta = (BindWidget), Category="Combat Widget | Data")
+	TObjectPtr<UProgressBar> CombatantHitPointBar;
 };
