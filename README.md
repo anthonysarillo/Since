@@ -44,9 +44,23 @@ Im going to die.
 Tim Cain,
 Unreal Engine(for the free shit and Gears of War),
 Tom Looman,
+George Pence,
 reubs,
 Tranek,
 The Game Dev Cave,
 so many more people on YouTube/the Interwebs that have helped me learn. Thank you.
+
+//====== // ABOUT THE PROJECT // ====== //
+It's a mix-up of the people who have helped me learn and grow the most, and what I personally like.
+Tim Cains philosophy/knowledge/HARD FUCKING work/ and everything else on video games in general.
+George Pences (YouTube) Core Systems tutorial.
+Tom Loomans course has taught me a lot and I love that he goes against the grain with GAS,
+because that's a motherfucker that everyone wants but cant have. So much more Tom, thank you.
+reubs is a gangster, I just found his Narrative tools content, he is awesome, check him out online.
+Tranek's GAS Doc and GAS Shooter gave me so much knowledge, but I can't even start to get into that shit.
+Tranek you're awesome, thank you.
+This guy Game Dev Cave, I can barely understand him, but he puts out great content non-stop.
+You have helped me so much man, I greatly appreciate you.
+
 
 
