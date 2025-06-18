@@ -1,6 +1,6 @@
 # Since
 
-//======== // SETTING // ========
+//======== // SETTING // ========//
 
 Post-Apoc suburbs/city of Chicago.
 I grew up in the suburbs and have always wanted to get out.
@@ -31,15 +31,15 @@ Shooters all my life as well but RPG's with great combat are the real KING bitch
 This is my setting Timothy, I hope you approve.
 
 
-//====== // STORY //======
+//====== // STORY //======//
 
 Jesus Christ.
 
-//================= // SYSTEM MECHANICS //=================
+//================= // SYSTEM MECHANICS //=================//
 
 Im going to die.
 
-//======== // Shout-Outs //========
+//======== // Shout-Outs //========//
 
 Tim Cain,
 Unreal Engine(for the free shit and Gears of War),
