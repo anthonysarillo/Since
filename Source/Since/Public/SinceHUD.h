@@ -54,18 +54,18 @@ protected:
 	virtual void BeginPlay() override;
 
 	// CROSSHAIR WIDGET
-	UPROPERTY()
+	UPROPERTY(BlueprintReadWrite, Category="Crosshair")
 	TObjectPtr<UCrosshairWidget> CrosshairWidget;
 
 	// CROSSHAIR BRACKETS WIDGET
-	UPROPERTY()
+	UPROPERTY(BlueprintReadWrite, Category="Crosshair")
 	TObjectPtr<UCrosshairBracketsWidget> CrosshairBracketsWidget;
 
 	// INTERACTION WIDGET
-	UPROPERTY()
+	UPROPERTY(BlueprintReadWrite, Category="Interaction")
 	TObjectPtr<UInteractionWidget> InteractionWidget;
 
 	// COMBAT WIDGET
-	UPROPERTY()
+	UPROPERTY(BlueprintReadWrite, Category="Combat")
 	TObjectPtr<UCombatWidget> CombatWidget;
 };

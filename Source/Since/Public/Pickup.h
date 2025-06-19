@@ -25,7 +25,7 @@ protected:
 	virtual void BeginPlay() override;
 
 
-	UPROPERTY(VisibleAnywhere, Category="Pickup")
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category="Pickup")
 	TObjectPtr<UStaticMeshComponent> PickupMesh;
 
 	UPROPERTY(EditInstanceOnly, Category="Pickup")

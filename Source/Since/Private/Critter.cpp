@@ -12,11 +12,19 @@
 #include "Camera/CameraComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "DrawDebugHelpers.h"
+#include "Components/SpotLightComponent.h"
 
 
 ACritter::ACritter()
 {
  	PrimaryActorTick.bCanEverTick = true;
+
+	// INPUT
+	Sneaking = false;
+	Jumping = false;
+	ChestLightOn = false;
+	Interacting = false;
+	Attacking = false;
 
 	// INTERACTION
 	InteractionCheckFrequency = 0.1f;
@@ -34,6 +42,11 @@ ACritter::ACritter()
 	// THIRD PERSON CAMERA
 	ThirdPersonCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("ThirdPersonCamera"));
 	ThirdPersonCamera->SetupAttachment(SpringArm);
+
+	// CHEST LIGHT COMPONENT
+	ChestLightComp = CreateDefaultSubobject<USpotLightComponent>(TEXT("ChestLight"));
+	ChestLightComp->SetupAttachment(GetMesh(), "chestlight");
+	ChestLightComp->SetVisibility(false);
 
 }
 
@@ -66,6 +79,9 @@ void ACritter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 
 	InputComp->BindAction(CritterConfig->Input_Move, ETriggerEvent::Triggered, this, &ACritter::Move);
 	InputComp->BindAction(CritterConfig->Input_Look, ETriggerEvent::Triggered, this, &ACritter::Look);
+	InputComp->BindAction(CritterConfig->Input_Sneak, ETriggerEvent::Triggered, this, &ACritter::Sneak);
+	InputComp->BindAction(CritterConfig->Input_Jump, ETriggerEvent::Triggered, this, &ACharacter::Jump);
+	InputComp->BindAction(CritterConfig->Input_ChestLight, ETriggerEvent::Triggered, this, &ACritter::ChestLight);
 	InputComp->BindAction(CritterConfig->Input_Activate, ETriggerEvent::Triggered, this, &ACritter::Activate);
 	InputComp->BindAction(CritterConfig->Input_Attack, ETriggerEvent::Triggered, this, &ACritter::Attack);
 
@@ -376,6 +392,16 @@ void ACritter::Look(const FInputActionValue& InputValue)
 	
 	AddControllerYawInput(Value.X);
 	AddControllerPitchInput(Value.Y);
+}
+
+void ACritter::Sneak()
+{
+	
+}
+
+void ACritter::ChestLight()
+{
+	
 }
 
 FVector ACritter::GetPawnViewLocation() const

@@ -5,6 +5,7 @@
 #include "InputAction.h"
 #include "Critter.generated.h"
 
+class USpotLightComponent;
 class ACritterController;
 class ASinceHUD;
 class ICombatInterface;
@@ -92,16 +93,37 @@ protected:
 	TObjectPtr<UCritterConfig> CritterConfig;
 
 	// SPRING ARM
-	UPROPERTY(VisibleAnywhere, Category="Components")
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category="Components")
 	TObjectPtr<USpringArmComponent> SpringArm;
 
 	// THIRD PERSON CAMERA
-	UPROPERTY(VisibleAnywhere, Category="Camera")
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category="Camera")
 	TObjectPtr<UCameraComponent> ThirdPersonCamera;
 
+	// CHEST LIGHT COMPONENT
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category="Components")
+	TObjectPtr<USpotLightComponent> ChestLightComp;
+
 	// ENHANCED INPUT
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Input")
+	bool Sneaking;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Input")
+	bool Jumping;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Input")
+	bool ChestLightOn;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Input")
+	bool Interacting;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Input")
+	bool Attacking;
+	
 	void Move(const FInputActionInstance& Instance);
 	void Look(const FInputActionValue& InputValue);
+	void Sneak();
+	void ChestLight();
 	void Activate();
 	void Attack();
 

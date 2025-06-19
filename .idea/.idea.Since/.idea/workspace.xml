@@ -12,24 +12,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0b07b47d-fc54-4957-aed9-4c52a5b9102c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Content/Since/Critter/Animations/Unarmed/BS_Unarmed_IdleWalkJog.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Since/UI/WBP_CrosshairBracketsWidget.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/Since/Private/CrosshairBracketsWidget.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/Since/Public/CrosshairBracketsWidget.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Critter/ABP_Critter.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Critter/Animations/Unarmed/Sneak/BS_Unarmed_Sneak_IdleWalk.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Critter/Animations/Unarmed/Sneak/Lyra_Crouch_Entry.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Critter/Animations/Unarmed/Sneak/Lyra_Unarmed_Crouch_Exit.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Critter/Animations/Unarmed/Sneak/Lyra_Unarmed_Crouch_Idle.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Critter/Animations/Unarmed/Sneak/Lyra_Unarmed_Crouch_Walk_Bwd.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Critter/Animations/Unarmed/Sneak/Lyra_Unarmed_Crouch_Walk_Fwd.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Critter/Animations/Unarmed/Sneak/Lyra_Unarmed_Crouch_Walk_Left.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Critter/Animations/Unarmed/Sneak/Lyra_Unarmed_Crouch_Walk_Right.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Critter/Input/IA_ChestLight.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Critter/Input/IA_Jump.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Critter/Input/IA_Sneak.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Since/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Since/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ControlRig/Characters/Mannequins/Animations/ABP_Manny.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ControlRig/Characters/Mannequins/Animations/ABP_Manny.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultEditor.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEditor.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ControlRig/Characters/Mannequins/Meshes/SK_Mannequin.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ControlRig/Characters/Mannequins/Meshes/SK_Mannequin.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Since/BP_Critter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Since/BP_Critter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Since/BP_SinceHUD.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Since/BP_SinceHUD.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Since/Critter/Animations/Unarmed/BS_Unarmed_IdleWalkJog.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Since/Critter/Animations/Unarmed/BS_Unarmed_IdleWalkJog.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Since/Critter/Animations/Unarmed/Lyra_Crouch_Entry.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Since/Critter/Animations/Unarmed/Lyra_Crouch_Entry.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Since/Critter/Animations/Unarmed/Lyra_Unarmed_Crouch_Exit.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Since/Critter/Animations/Unarmed/Lyra_Unarmed_Crouch_Exit.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Since/Critter/Animations/Unarmed/Lyra_Unarmed_Crouch_Idle.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Since/Critter/Animations/Unarmed/Lyra_Unarmed_Crouch_Idle.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Since/Critter/Animations/Unarmed/Lyra_Unarmed_Crouch_Walk_Bwd.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Since/Critter/Animations/Unarmed/Lyra_Unarmed_Crouch_Walk_Bwd.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Since/Critter/Animations/Unarmed/Lyra_Unarmed_Crouch_Walk_Fwd.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Since/Critter/Animations/Unarmed/Lyra_Unarmed_Crouch_Walk_Fwd.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Since/Critter/Animations/Unarmed/Lyra_Unarmed_Crouch_Walk_Left.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Since/Critter/Animations/Unarmed/Lyra_Unarmed_Crouch_Walk_Left.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Since/Critter/Animations/Unarmed/Lyra_Unarmed_Crouch_Walk_Right.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Since/Critter/Animations/Unarmed/Lyra_Unarmed_Crouch_Walk_Right.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Since/Critter/Input/DA_CritterConfig.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Since/Critter/Input/DA_CritterConfig.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Since/Critter/Input/IMC_CritterContext.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Since/Critter/Input/IMC_CritterContext.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Since/Maps/ProtoMap.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Since/Maps/ProtoMap.umap" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Since/UI/WBP_CombatWidget.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Since/UI/WBP_CombatWidget.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Since/UI/WBP_CrosshairBracketsWidget.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Since/UI/WBP_CrosshairBracketsWidget.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Since/UI/WBP_CrosshairWidget.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Since/UI/WBP_CrosshairWidget.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Since/UI/WBP_InteractionWidget.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Since/UI/WBP_InteractionWidget.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Since/Private/Critter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Since/Private/Critter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Since/Private/HeadsUpDisplay.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Since/Private/SinceHUD.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Since/Private/SinceHUD.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Since/Public/CombatTestActor.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Since/Public/CombatTestActor.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Since/Public/CombatWidget.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Since/Public/CombatWidget.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Since/Public/Critter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Since/Public/Critter.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Since/Public/HeadsUpDisplay.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Since/Public/CritterConfig.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Since/Public/CritterConfig.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Since/Public/CrosshairWidget.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Since/Public/CrosshairWidget.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Since/Public/InterfaceTestActor.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Since/Public/InterfaceTestActor.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Since/Public/Pickup.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Since/Public/Pickup.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Since/Public/SinceHUD.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Since/Public/SinceHUD.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,7 +87,8 @@
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="cidr-memory-view://26" root0="FORCE_HIGHLIGHTING" />
+    <setting file="cidr-memory-view://31" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.5/Engine/Source/Runtime/Engine/Classes/Components/CapsuleComponent.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.5/Engine/Source/Runtime/Engine/Private/Actor.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.5/Engine/Source/Runtime/Launch/Private/LaunchEngineLoop.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.5/Engine/Source/Runtime/UMG/Private/UserWidget.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -238,7 +260,7 @@
       <workItem from="1750220681156" duration="241000" />
       <workItem from="1750221598418" duration="3690000" />
       <workItem from="1750252379372" duration="60000" />
-      <workItem from="1750252481443" duration="9066000" />
+      <workItem from="1750252481443" duration="19441000" />
     </task>
     <servers />
   </component>

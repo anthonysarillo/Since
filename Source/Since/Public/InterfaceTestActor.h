@@ -23,7 +23,7 @@ protected:
 	// OVERRIDES
 	virtual void Tick(float DeltaTime) override;
 
-	UPROPERTY(EditAnywhere, Category="Test Actor")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Test Actor")
 	TObjectPtr<UStaticMeshComponent> Mesh;
 
 	UPROPERTY(EditInstanceOnly, Category="Test Actor")

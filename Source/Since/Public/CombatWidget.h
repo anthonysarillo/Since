@@ -27,6 +27,6 @@ protected:
 	UPROPERTY(EditDefaultsOnly, meta = (BindWidget), Category="Combat Widget | Data")
 	TObjectPtr<UTextBlock> Name;
 
-	UPROPERTY(EditDefaultsOnly, meta = (BindWidget), Category="Combat Widget | Data")
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, meta = (BindWidget), Category="Combat Widget | Data")
 	TObjectPtr<UProgressBar> CombatantHitPointBar;
 };
