@@ -22,11 +22,17 @@ ACritter::ACritter()
 	// INPUT
 	Sneaking = false;
 	Jumping = false;
+	ThirdPersonView = true;
 	ChestLightOn = false;
 	Interacting = false;
 	bReady = false;
+	Aiming = false;
 	Attacking = false;
+	MeleeOneHand = false;
+	MeleeTwoHand = false;
 	Pistol = false;
+	Rifle = false;
+	Shotgun = false;
 
 	// INTERACTION
 	InteractionCheckFrequency = 0.1f;
@@ -44,6 +50,17 @@ ACritter::ACritter()
 	// THIRD PERSON CAMERA
 	ThirdPersonCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("ThirdPersonCamera"));
 	ThirdPersonCamera->SetupAttachment(SpringArm);
+	ThirdPersonCamera->bAutoActivate = true;
+
+	// THIRD PERSON CAMERA REF
+	ThirdPersonCameraRef = CreateDefaultSubobject<UCameraComponent>(TEXT("ThirdPersonCameraRef"));
+	ThirdPersonCameraRef->SetupAttachment(ThirdPersonCamera);
+	ThirdPersonCameraRef->bAutoActivate = false;
+	
+	// FIRST PERSON CAMERA
+	FirstPersonCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("FirstPersonCamera"));
+	FirstPersonCamera->SetupAttachment(GetMesh(), "Head");
+	FirstPersonCamera->bAutoActivate = false;
 
 	// CHEST LIGHT COMPONENT
 	ChestLightComp = CreateDefaultSubobject<USpotLightComponent>(TEXT("ChestLight"));
@@ -83,9 +100,12 @@ void ACritter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 	InputComp->BindAction(CritterConfig->Input_Look, ETriggerEvent::Triggered, this, &ACritter::Look);
 	InputComp->BindAction(CritterConfig->Input_Sneak, ETriggerEvent::Triggered, this, &ACritter::Sneak);
 	InputComp->BindAction(CritterConfig->Input_Jump, ETriggerEvent::Triggered, this, &ACharacter::Jump);
+	InputComp->BindAction(CritterConfig->Input_ChangeView, ETriggerEvent::Triggered, this, &ACritter::ChangeView);
 	InputComp->BindAction(CritterConfig->Input_ChestLight, ETriggerEvent::Triggered, this, &ACritter::ChestLight);
 	InputComp->BindAction(CritterConfig->Input_Activate, ETriggerEvent::Triggered, this, &ACritter::Activate);
 	InputComp->BindAction(CritterConfig->Input_Ready, ETriggerEvent::Triggered, this, &ACritter::Ready);
+	InputComp->BindAction(CritterConfig->Input_Aim, ETriggerEvent::Started, this, &ACritter::Aim);
+	InputComp->BindAction(CritterConfig->Input_StopAim, ETriggerEvent::Completed, this, &ACritter::StopAim);
 	InputComp->BindAction(CritterConfig->Input_Attack, ETriggerEvent::Triggered, this, &ACritter::Attack);
 
 }
@@ -402,6 +422,11 @@ void ACritter::Sneak()
 	
 }
 
+void ACritter::ChangeView()
+{
+	
+}
+
 void ACritter::ChestLight()
 {
 	
@@ -410,6 +435,16 @@ void ACritter::ChestLight()
 void ACritter::Ready()
 {
 	
+}
+
+void ACritter::Aim()
+{
+	Aiming = true;
+}
+
+void ACritter::StopAim()
+{
+	Aiming = false;
 }
 
 FVector ACritter::GetPawnViewLocation() const

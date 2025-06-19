@@ -3,6 +3,7 @@
 #include "Blueprint/UserWidget.h"
 #include "CrosshairWidget.generated.h"
 
+
 class UTextBlock;
 
 UCLASS()
@@ -15,5 +16,6 @@ public:
 protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, meta = (BindWidget), Category="CrosshairBrackets Widget | Data")
 	TObjectPtr<UTextBlock> Crosshair;
+
 	
 };
