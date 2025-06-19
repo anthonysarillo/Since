@@ -118,13 +118,20 @@ protected:
 	bool Interacting;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Input")
+	bool bReady;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Input")
 	bool Attacking;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Input")
+	bool Pistol;
 	
 	void Move(const FInputActionInstance& Instance);
 	void Look(const FInputActionValue& InputValue);
 	void Sneak();
 	void ChestLight();
 	void Activate();
+	void Ready();
 	void Attack();
 
 	// INTERACTION

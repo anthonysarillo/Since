@@ -37,6 +37,9 @@ public:
 	TObjectPtr<UInputAction> Input_Activate;
 
 	UPROPERTY(EditDefaultsOnly, Category="Input")
+	TObjectPtr<UInputAction> Input_Ready;
+
+	UPROPERTY(EditDefaultsOnly, Category="Input")
 	TObjectPtr<UInputAction> Input_Attack;
 	
 };

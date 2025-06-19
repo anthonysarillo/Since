@@ -24,7 +24,9 @@ ACritter::ACritter()
 	Jumping = false;
 	ChestLightOn = false;
 	Interacting = false;
+	bReady = false;
 	Attacking = false;
+	Pistol = false;
 
 	// INTERACTION
 	InteractionCheckFrequency = 0.1f;
@@ -83,6 +85,7 @@ void ACritter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 	InputComp->BindAction(CritterConfig->Input_Jump, ETriggerEvent::Triggered, this, &ACharacter::Jump);
 	InputComp->BindAction(CritterConfig->Input_ChestLight, ETriggerEvent::Triggered, this, &ACritter::ChestLight);
 	InputComp->BindAction(CritterConfig->Input_Activate, ETriggerEvent::Triggered, this, &ACritter::Activate);
+	InputComp->BindAction(CritterConfig->Input_Ready, ETriggerEvent::Triggered, this, &ACritter::Ready);
 	InputComp->BindAction(CritterConfig->Input_Attack, ETriggerEvent::Triggered, this, &ACritter::Attack);
 
 }
@@ -400,6 +403,11 @@ void ACritter::Sneak()
 }
 
 void ACritter::ChestLight()
+{
+	
+}
+
+void ACritter::Ready()
 {
 	
 }
