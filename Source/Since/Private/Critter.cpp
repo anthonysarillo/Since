@@ -146,7 +146,7 @@ void ACritter::PerformInteractionCheck()
 
 	float LookDirection = FVector::DotProduct(GetActorForwardVector(), GetViewRotation().Vector());
 	
-	if (ThirdPersonView == true && LookDirection > .25)
+	if (ThirdPersonView == true && LookDirection > .5)
 	{
 		DrawDebugLine(GetWorld(), Start, End, FColor::White, false, .1, 0, .5);
 	}
@@ -154,7 +154,7 @@ void ACritter::PerformInteractionCheck()
 	{
 		if (Hit.GetActor()->GetClass()->ImplementsInterface(UInteractionInterface::StaticClass()))
 		{
-			if (Hit.GetActor() != InteractionData.CurrentInteractable && ThirdPersonView == true && LookDirection > .25)
+			if (Hit.GetActor() != InteractionData.CurrentInteractable && ThirdPersonView == true && LookDirection > .5)
 			{
 				FoundInteractable(Hit.GetActor());
 
@@ -170,7 +170,7 @@ void ACritter::PerformInteractionCheck()
 	}
 	NoInteractableFound();
 
-	if (ThirdPersonView == false)
+	if (ThirdPersonView == false && LookDirection >= .85)
 	{
 		DrawDebugLine(GetWorld(), StartFP, EndFP, FColor::White, false, .1, 0, .5);
 	}
@@ -178,7 +178,7 @@ void ACritter::PerformInteractionCheck()
 	{
 		if (HitFP.GetActor()->GetClass()->ImplementsInterface(UInteractionInterface::StaticClass()))
 		{
-			if (HitFP.GetActor() != InteractionData.CurrentInteractable && ThirdPersonView == false)
+			if (HitFP.GetActor() != InteractionData.CurrentInteractable && ThirdPersonView == false && LookDirection >=.85 ) 
 			{
 				FoundInteractable(HitFP.GetActor());
 
@@ -335,7 +335,7 @@ void ACritter::PerformCombatCheck()
 	}
 	NoCombatantFound();
 
-	if (ThirdPersonView == false)
+	if (ThirdPersonView == false && LookDirection > .85)
 	{
 		DrawDebugLine(GetWorld(), StartFP, EndFP, FColor::White, false, .1, 0, .5);
 	}
@@ -343,7 +343,7 @@ void ACritter::PerformCombatCheck()
 	{
 		if (HitFP.GetActor()->GetClass()->ImplementsInterface(UCombatInterface::StaticClass()))
 		{
-			if (HitFP.GetActor() != CombatData.CurrentCombatant && ThirdPersonView == false)
+			if (HitFP.GetActor() != CombatData.CurrentCombatant && ThirdPersonView == false && LookDirection > .85)
 			{
 				FoundCombatant(HitFP.GetActor());
 
