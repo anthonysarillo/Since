@@ -13,8 +13,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0b07b47d-fc54-4957-aed9-4c52a5b9102c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Since/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Since/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Since/BP_Critter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Since/BP_Critter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Since/Private/Critter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Since/Private/Critter.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,7 +204,7 @@
       <workItem from="1750252379372" duration="60000" />
       <workItem from="1750252481443" duration="27042000" />
       <workItem from="1750339054638" duration="12856000" />
-      <workItem from="1750365075520" duration="8282000" />
+      <workItem from="1750365075520" duration="9098000" />
     </task>
     <servers />
   </component>
