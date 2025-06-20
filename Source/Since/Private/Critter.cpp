@@ -37,10 +37,12 @@ ACritter::ACritter()
 	// INTERACTION
 	InteractionCheckFrequency = 0.1f;
 	InteractionCheckDistance = 250.0f;
+	InteractionCheckDistanceFP = 200.0f;
 	
 	// COMBAT
 	CombatCheckFrequency = 0.1f;
 	CombatCheckDistance = 1000.0f;
+	CombatCheckDistanceFP = 950.0f;
 
 	// SPRING ARM
 	SpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArm"));
@@ -106,7 +108,8 @@ void ACritter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 	InputComp->BindAction(CritterConfig->Input_Ready, ETriggerEvent::Triggered, this, &ACritter::Ready);
 	InputComp->BindAction(CritterConfig->Input_Aim, ETriggerEvent::Started, this, &ACritter::Aim);
 	InputComp->BindAction(CritterConfig->Input_StopAim, ETriggerEvent::Completed, this, &ACritter::StopAim);
-	InputComp->BindAction(CritterConfig->Input_Attack, ETriggerEvent::Triggered, this, &ACritter::Attack);
+	InputComp->BindAction(CritterConfig->Input_Attack, ETriggerEvent::Started, this, &ACritter::Attack);
+	InputComp->BindAction(CritterConfig->Input_Attack, ETriggerEvent::Completed, this, &ACritter::StopAttack);
 
 }
 
@@ -129,31 +132,61 @@ void ACritter::PerformInteractionCheck()
 	InteractionData.LastInteractionCheckTime = GetWorld()->GetTimeSeconds();
 
 	FHitResult Hit;
+	FHitResult HitFP;
 	FVector Start;
+	FVector StartFP;
 	Start = GetPawnViewLocation();
+	StartFP = GetFirstPersonPawnViewLocation();
 	FVector End{Start + (GetViewRotation().Vector() * InteractionCheckDistance)};
+	FVector EndFP{Start + (GetViewRotation().Vector() * InteractionCheckDistanceFP)};
 	FCollisionQueryParams QueryParams;
+	FCollisionQueryParams QueryParamsFP;
 	QueryParams.AddIgnoredActor(this);
+	QueryParamsFP.AddIgnoredActor(this);
 
 	float LookDirection = FVector::DotProduct(GetActorForwardVector(), GetViewRotation().Vector());
 	
-	if (LookDirection > .25)
+	if (ThirdPersonView == true && LookDirection > .25)
 	{
-		//DrawDebugLine(GetWorld(), Start, End, FColor::White, false, .1, 0, .5);
+		DrawDebugLine(GetWorld(), Start, End, FColor::White, false, .1, 0, .5);
 	}
 	if (GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECC_Visibility))
 	{
 		if (Hit.GetActor()->GetClass()->ImplementsInterface(UInteractionInterface::StaticClass()))
 		{
-			if (Hit.GetActor() != InteractionData.CurrentInteractable && LookDirection > .25)
+			if (Hit.GetActor() != InteractionData.CurrentInteractable && ThirdPersonView == true && LookDirection > .25)
 			{
 				FoundInteractable(Hit.GetActor());
 
-				//DrawDebugLine(GetWorld(), Start, End, FColor::Green, false, 1.5, 0, 1.5);
+					DrawDebugLine(GetWorld(), Start, End, FColor::Green, false, 1.5, 0, 1.5);
+
+					return;
+			}
+			if (Hit.GetActor() == InteractionData.CurrentInteractable)
+			{
+				return;;
+			}
+		}
+	}
+	NoInteractableFound();
+
+	if (ThirdPersonView == false)
+	{
+		DrawDebugLine(GetWorld(), StartFP, EndFP, FColor::White, false, .1, 0, .5);
+	}
+	if (GetWorld()->LineTraceSingleByChannel(HitFP, StartFP, EndFP, ECC_Visibility))
+	{
+		if (HitFP.GetActor()->GetClass()->ImplementsInterface(UInteractionInterface::StaticClass()))
+		{
+			if (HitFP.GetActor() != InteractionData.CurrentInteractable && ThirdPersonView == false)
+			{
+				FoundInteractable(HitFP.GetActor());
+
+				DrawDebugLine(GetWorld(), StartFP, EndFP, FColor::Green, false, 1.5, 0, 1.5);
 
 				return;
 			}
-			if (Hit.GetActor() == InteractionData.CurrentInteractable)
+			if (HitFP.GetActor() == InteractionData.CurrentInteractable)
 			{
 				return;;
 			}
@@ -264,31 +297,61 @@ void ACritter::UpdateInteractionWidget() const
 void ACritter::PerformCombatCheck()
 {
 	FHitResult Hit;
+	FHitResult HitFP;
 	FVector Start;
+	FVector StartFP;
 	Start = GetPawnViewLocation();
+	StartFP = GetFirstPersonPawnViewLocation();
 	FVector End{Start + (GetViewRotation().Vector() * CombatCheckDistance)};
+	FVector EndFP{Start + (GetViewRotation().Vector() * CombatCheckDistanceFP)};
 	FCollisionQueryParams QueryParams;
+	FCollisionQueryParams QueryParamsFP;
 	QueryParams.AddIgnoredActor(this);
+	QueryParamsFP.AddIgnoredActor(this);
 
 	float LookDirection = FVector::DotProduct(GetActorForwardVector(), GetViewRotation().Vector());
 
-	if (LookDirection > .75)
+	if (ThirdPersonView == true && LookDirection > .75)
 	{
-		//DrawDebugLine(GetWorld(), Start, End, FColor::White, false, .1, 0, .5);
+		DrawDebugLine(GetWorld(), Start, End, FColor::White, false, .1, 0, .5);
 	}
 	if (GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECC_Pawn))
 	{
 		if (Hit.GetActor()->GetClass()->ImplementsInterface(UCombatInterface::StaticClass()))
 		{
-			if (Hit.GetActor() != CombatData.CurrentCombatant && LookDirection > .75)
+			if (Hit.GetActor() != CombatData.CurrentCombatant && ThirdPersonView == true && LookDirection > .75)
 			{
 				FoundCombatant(Hit.GetActor());
 
-				//DrawDebugLine(GetWorld(), Start, End, FColor::Red, false, 1.5, 0, 1.5);
+				DrawDebugLine(GetWorld(), Start, End, FColor::Red, false, 1.5, 0, 1.5);
 
 				return;
 			}
 			if (Hit.GetActor() == CombatData.CurrentCombatant)
+			{
+				return;;
+			}
+		}
+	}
+	NoCombatantFound();
+
+	if (ThirdPersonView == false)
+	{
+		DrawDebugLine(GetWorld(), StartFP, EndFP, FColor::White, false, .1, 0, .5);
+	}
+	if (GetWorld()->LineTraceSingleByChannel(HitFP, StartFP, EndFP, ECC_Pawn))
+	{
+		if (HitFP.GetActor()->GetClass()->ImplementsInterface(UCombatInterface::StaticClass()))
+		{
+			if (HitFP.GetActor() != CombatData.CurrentCombatant && ThirdPersonView == false)
+			{
+				FoundCombatant(HitFP.GetActor());
+
+				DrawDebugLine(GetWorld(), StartFP, EndFP, FColor::Red, false, 1.5, 0, 1.5);
+
+				return;
+			}
+			if (HitFP.GetActor() == CombatData.CurrentCombatant)
 			{
 				return;;
 			}
@@ -385,6 +448,13 @@ void ACritter::Attack()
 	{
 		TargetCombatant->Combat(this);
 	}
+
+	Attacking = true;
+}
+
+void ACritter::StopAttack()
+{
+	Attacking = false;
 }
 
 void ACritter::UpdateCombatWidget() const
@@ -450,6 +520,11 @@ void ACritter::StopAim()
 FVector ACritter::GetPawnViewLocation() const
 {
 	return ThirdPersonCamera->GetComponentLocation();
+}
+
+FVector ACritter::GetFirstPersonPawnViewLocation() const
+{
+	return FirstPersonCamera->GetComponentLocation();
 }
 
 

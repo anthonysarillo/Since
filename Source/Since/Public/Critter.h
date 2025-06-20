@@ -80,6 +80,7 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	virtual void Tick(float DeltaTime) override;
 	virtual FVector GetPawnViewLocation() const override;
+	virtual FVector GetFirstPersonPawnViewLocation() const;
 
 	// INTERACTION
 	FORCEINLINE bool IsInteracting() const { return GetWorldTimerManager().IsTimerActive(TimerHandle_Interaction); };
@@ -184,6 +185,7 @@ protected:
 	void Aim();
 	void StopAim();
 	void Attack();
+	void StopAttack();
 
 	// INTERACTION
 	UPROPERTY(VisibleAnywhere, Category="Interaction")
@@ -194,6 +196,9 @@ protected:
 
 	UPROPERTY(EditDefaultsOnly, Category="Interaction")
 	float InteractionCheckDistance;
+
+	UPROPERTY(EditDefaultsOnly, Category="Interaction")
+	float InteractionCheckDistanceFP;
 
 	FTimerHandle TimerHandle_Interaction;
 	FInteractionData InteractionData;
@@ -213,6 +218,9 @@ protected:
 
 	UPROPERTY(EditDefaultsOnly, Category="Combat")
 	float CombatCheckDistance;
+
+	UPROPERTY(EditDefaultsOnly, Category="Combat")
+	float CombatCheckDistanceFP;
 
 	UPROPERTY(EditDefaultsOnly,Category="Combat")
 	float TargetDirection;
