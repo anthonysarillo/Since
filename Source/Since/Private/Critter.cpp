@@ -136,9 +136,9 @@ void ACritter::PerformInteractionCheck()
 	FVector Start;
 	FVector StartFP;
 	Start = GetPawnViewLocation();
-	StartFP = GetFirstPersonPawnViewLocation();
+	StartFP = FirstPersonCamera->GetComponentLocation();
 	FVector End{Start + (GetViewRotation().Vector() * InteractionCheckDistance)};
-	FVector EndFP{Start + (GetViewRotation().Vector() * InteractionCheckDistanceFP)};
+	FVector EndFP{Start + (FirstPersonCamera->GetComponentRotation().Vector() * InteractionCheckDistanceFP)};
 	FCollisionQueryParams QueryParams;
 	FCollisionQueryParams QueryParamsFP;
 	QueryParams.AddIgnoredActor(this);
@@ -170,7 +170,7 @@ void ACritter::PerformInteractionCheck()
 	}
 	NoInteractableFound();
 
-	if (ThirdPersonView == false && LookDirection >= .85)
+	if (ThirdPersonView == false)
 	{
 		DrawDebugLine(GetWorld(), StartFP, EndFP, FColor::White, false, .1, 0, .5);
 	}
@@ -178,7 +178,7 @@ void ACritter::PerformInteractionCheck()
 	{
 		if (HitFP.GetActor()->GetClass()->ImplementsInterface(UInteractionInterface::StaticClass()))
 		{
-			if (HitFP.GetActor() != InteractionData.CurrentInteractable && ThirdPersonView == false && LookDirection >=.85 ) 
+			if (HitFP.GetActor() != InteractionData.CurrentInteractable && ThirdPersonView == false) 
 			{
 				FoundInteractable(HitFP.GetActor());
 
@@ -301,9 +301,9 @@ void ACritter::PerformCombatCheck()
 	FVector Start;
 	FVector StartFP;
 	Start = GetPawnViewLocation();
-	StartFP = GetFirstPersonPawnViewLocation();
+	StartFP = FirstPersonCamera->GetComponentLocation();
 	FVector End{Start + (GetViewRotation().Vector() * CombatCheckDistance)};
-	FVector EndFP{Start + (GetViewRotation().Vector() * CombatCheckDistanceFP)};
+	FVector EndFP{Start + (FirstPersonCamera->GetComponentRotation().Vector() * CombatCheckDistanceFP)};
 	FCollisionQueryParams QueryParams;
 	FCollisionQueryParams QueryParamsFP;
 	QueryParams.AddIgnoredActor(this);
@@ -335,7 +335,7 @@ void ACritter::PerformCombatCheck()
 	}
 	NoCombatantFound();
 
-	if (ThirdPersonView == false && LookDirection > .85)
+	if (ThirdPersonView == false)
 	{
 		DrawDebugLine(GetWorld(), StartFP, EndFP, FColor::White, false, .1, 0, .5);
 	}
@@ -343,7 +343,7 @@ void ACritter::PerformCombatCheck()
 	{
 		if (HitFP.GetActor()->GetClass()->ImplementsInterface(UCombatInterface::StaticClass()))
 		{
-			if (HitFP.GetActor() != CombatData.CurrentCombatant && ThirdPersonView == false && LookDirection > .85)
+			if (HitFP.GetActor() != CombatData.CurrentCombatant && ThirdPersonView == false)
 			{
 				FoundCombatant(HitFP.GetActor());
 
