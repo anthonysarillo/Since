@@ -33,6 +33,10 @@ public:
 	UPROPERTY(BlueprintReadOnly, Category = "Attributes")
 	FGameplayAttributeData GetOffMe; // Threshold Modifier - Threshold - Permanent
 	ATTRIBUTE_ACCESSORS(UBonuses, GetOffMe)
+
+	UPROPERTY(BlueprintReadOnly, Category = "Attributes")
+	FGameplayAttributeData TakeItAllIn; // Threshold Modifier - Threshold - Permanent
+	ATTRIBUTE_ACCESSORS(UBonuses, TakeItAllIn)
 	
 	UPROPERTY(BlueprintReadOnly, Category = "Attributes")
 	FGameplayAttributeData WeightOfTheWorld; // BackPack Modifier - BackPackMax - Permanent
@@ -53,5 +57,13 @@ public:
 	UPROPERTY(BlueprintReadOnly, Category = "Attributes")
 	FGameplayAttributeData HoleInOne; // Crit Modifier - CritMax - Permanent
 	ATTRIBUTE_ACCESSORS(UBonuses, HoleInOne)
+
+	UPROPERTY(BlueprintReadOnly, Category = "Attributes")
+	FGameplayAttributeData GoldenGloves; // UnarmedDamage Modifier - UnarmedDamage - Permanent
+	ATTRIBUTE_ACCESSORS(UBonuses, GoldenGloves)
+
+	UPROPERTY(BlueprintReadOnly, Category = "Attributes")
+	FGameplayAttributeData ThatsaKill; // MeleeDamage Modifier - MeleeDamage - Permanent
+	ATTRIBUTE_ACCESSORS(UBonuses, ThatsaKill)
 	
 };

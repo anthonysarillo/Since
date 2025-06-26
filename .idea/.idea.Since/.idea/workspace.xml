@@ -12,16 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b39bf1f7-afc5-410d-9528-9b2962d1eeb2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Content/Since/GAS/Effects/Dude/Primary/Acumen/GE_AcumenLevelUp.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Since/GAS/Effects/Dude/Primary/Health/GE_HealthLevelUp.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Since/GAS/Effects/Dude/Primary/Muscle/GE_MuscleLevelUp.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Since/GAS/Effects/Dude/Primary/Nerve/GE_NerveLevelUp.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Since/GAS/Effects/Dude/Primary/Utility/GE_UtilityLevelUp.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Since/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Since/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Since/Dude/BP_Dude.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Since/Dude/BP_Dude.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Since/GAS/Effects/Dude/Derived/Level/GE_DudeLevelUp.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Since/GAS/Effects/Dude/Derived/Level/GE_DudeLevelUp.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Since/Private/GAS/Bonuses.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Since/Private/GAS/Bonuses.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Since/Private/GAS/DerivedSet.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Since/Private/GAS/DerivedSet.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Since/Public/GAS/Bonuses.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Since/Public/GAS/Bonuses.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -192,7 +183,7 @@
       <option name="presentableId" value="Default" />
       <updated>1750816310230</updated>
       <workItem from="1750816311535" duration="14660000" />
-      <workItem from="1750865387337" duration="21583000" />
+      <workItem from="1750865387337" duration="22743000" />
     </task>
     <servers />
   </component>
