@@ -11,8 +11,8 @@ UDerivedSet::UDerivedSet()
 	HitPoints = 120;
 	HitPointsMax = 120;
 	HitPointsRegenRate = 1;
-	Energy = 68;
-	EnergyMax = 68;
+	Energy = 70;
+	EnergyMax = 70;
 	EnergyRegenRate = 1;
 	Backpack = 160;
 	BackpackMax = 160;
@@ -21,7 +21,7 @@ UDerivedSet::UDerivedSet()
 	Resistance =0;
 	Threshold = 0;
 	Damage = 0;
-	UnarmedDamage = .75;
+	UnarmedDamage = .5;
 	MeleeDamage = .5;
 	ReloadSpeed = 1.5;
 	MoveSpeed = 1;

@@ -1,5 +1,8 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
+// GAME
 #include "GAS/Bonuses.h"
 
+// ENGINE
+
+UBonuses::UBonuses()
+{
+}
