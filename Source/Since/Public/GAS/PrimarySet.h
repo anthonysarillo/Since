@@ -20,8 +20,19 @@ class SINCE_API UPrimarySet : public UAttributeSet
 public:
 	// Constructor
 	UPrimarySet();
+	
+	// Overrides
+	virtual void PostGameplayEffectExecute(const struct FGameplayEffectModCallbackData& Data) override;
 
 	// HUMAN - Primary Attributes
+	UPROPERTY(BlueprintReadOnly, Category = "Attributes")
+	FGameplayAttributeData HumanPoints;
+	ATTRIBUTE_ACCESSORS(UPrimarySet, HumanPoints)
+
+	UPROPERTY(BlueprintReadOnly, Category = "Attributes")
+	FGameplayAttributeData HumanPointsMax;
+	ATTRIBUTE_ACCESSORS(UPrimarySet, HumanPointsMax)
+
 	UPROPERTY(BlueprintReadOnly, Category = "Attributes")
 	FGameplayAttributeData Health;
 	ATTRIBUTE_ACCESSORS(UPrimarySet, Health)

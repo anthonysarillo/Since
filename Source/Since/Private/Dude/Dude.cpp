@@ -11,10 +11,12 @@
 #include "GAS/SinceAbilitySystemComponent.h"
 
 // ENGINE
+#include "Engine/Engine.h"
 #include "EnhancedInputSubsystems.h"
 #include "EnhancedInputComponent.h"
 #include "Camera/CameraComponent.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "DrawDebugHelpers.h"
 
 
 
@@ -91,6 +93,20 @@ void ADude::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 
 	InputComp->BindAction(DudeInputConfig->Input_Move, ETriggerEvent::Triggered, this, &ADude::Move);
 	InputComp->BindAction(DudeInputConfig->Input_Look, ETriggerEvent::Triggered, this, &ADude::Look);
+	InputComp->BindAction(DudeInputConfig->Input_Contact, ETriggerEvent::Triggered, this, &ADude::Contact);
+	InputComp->BindAction(DudeInputConfig->Input_Block, ETriggerEvent::Started, this, &ADude::Block);
+	InputComp->BindAction(DudeInputConfig->Input_BlockStop, ETriggerEvent::Completed, this, &ADude::BlockStop);
+	InputComp->BindAction(DudeInputConfig->Input_Aim, ETriggerEvent::Started, this, &ADude::Aim);
+	InputComp->BindAction(DudeInputConfig->Input_AimStop, ETriggerEvent::Completed, this, &ADude::AimStop);
+	InputComp->BindAction(DudeInputConfig->Input_Attack, ETriggerEvent::Started, this, &ADude::Attack);
+	InputComp->BindAction(DudeInputConfig->Input_AttackStop, ETriggerEvent::Completed, this, &ADude::AttackStop);
+	InputComp->BindAction(DudeInputConfig->Input_Ready, ETriggerEvent::Triggered, this, &ADude::Ready);
+	InputComp->BindAction(DudeInputConfig->Input_Reload, ETriggerEvent::Triggered, this, &ADude::Reload);
+	InputComp->BindAction(DudeInputConfig->Input_Sneak, ETriggerEvent::Triggered, this, &ADude::Sneak);
+	InputComp->BindAction(DudeInputConfig->Input_Jump, ETriggerEvent::Triggered, this, &ACharacter::Jump);
+	InputComp->BindAction(DudeInputConfig->Input_Cache, ETriggerEvent::Triggered, this, &ADude::Cache);
+	InputComp->BindAction(DudeInputConfig->Input_Pause, ETriggerEvent::Triggered, this, &ADude::Pause);
+	InputComp->BindAction(DudeInputConfig->Input_Light, ETriggerEvent::Triggered, this, &ADude::Light);
 
 
 
@@ -144,6 +160,67 @@ void ADude::Look(const FInputActionValue& InputValue)
 	
 	AddControllerYawInput(Value.X);
 	AddControllerPitchInput(Value.Y);
+}
+
+void ADude::Contact()
+{
+	
+}
+
+void ADude::Block()
+{
+	if (GEngine)
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 1, FColor::Green, "Block");
+	}
+}
+
+void ADude::BlockStop()
+{
+	if (GEngine)
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 1, FColor::Red, "BlockStop");
+	}
+}
+
+void ADude::Aim()
+{
+}
+
+void ADude::AimStop()
+{
+}
+
+void ADude::Attack()
+{
+}
+
+void ADude::AttackStop()
+{
+}
+
+void ADude::Ready()
+{
+}
+
+void ADude::Reload()
+{
+}
+
+void ADude::Sneak()
+{
+}
+
+void ADude::Cache()
+{
+}
+
+void ADude::Pause()
+{
+}
+
+void ADude::Light()
+{
 }
 
 UAbilitySystemComponent* ADude::GetAbilitySystemComponent() const

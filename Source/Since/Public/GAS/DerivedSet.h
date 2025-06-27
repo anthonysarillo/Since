@@ -21,6 +21,7 @@ public:
 	UDerivedSet();
 
 	// Overrides
+	virtual void PostGameplayEffectExecute(const struct FGameplayEffectModCallbackData& Data) override;
 
 	// Derived Attributes
 	UPROPERTY(BlueprintReadOnly, Category = "Attributes")

@@ -12,8 +12,74 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b39bf1f7-afc5-410d-9528-9b2962d1eeb2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Content/Since/Dude/Animations/Unarmed/BS_Unarmed_IdleWalkJog.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Dude/Animations/Unarmed/Lyra_Unarmed_Idle_Ready.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Dude/Animations/Unarmed/Lyra_Unarmed_Jog_Bwd.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Dude/Animations/Unarmed/Lyra_Unarmed_Jog_Fwd.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Dude/Animations/Unarmed/Lyra_Unarmed_Jog_Left.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Dude/Animations/Unarmed/Lyra_Unarmed_Jog_Right.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Dude/Animations/Unarmed/Lyra_Unarmed_Jump_Apex.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Dude/Animations/Unarmed/Lyra_Unarmed_Jump_Fall_Land.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Dude/Animations/Unarmed/Lyra_Unarmed_Jump_Fall_Loop.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Dude/Animations/Unarmed/Lyra_Unarmed_Jump_RecoveryAdditive.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Dude/Animations/Unarmed/Lyra_Unarmed_Jump_Start.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Dude/Animations/Unarmed/Lyra_Unarmed_Jump_Start_Loop.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Dude/Animations/Unarmed/Lyra_Unarmed_Walk_Bwd.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Dude/Animations/Unarmed/Lyra_Unarmed_Walk_Fwd.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Dude/Animations/Unarmed/Lyra_Unarmed_Walk_Left.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Dude/Animations/Unarmed/Lyra_Unarmed_Walk_Right.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Dude/Animations/Unarmed/Sneak/BS_Sneak_IdleWalkRun.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Dude/Animations/Unarmed/Sneak/Lyra_Crouch_Entry.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Dude/Animations/Unarmed/Sneak/Lyra_Unarmed_Crouch_Exit.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Dude/Animations/Unarmed/Sneak/Lyra_Unarmed_Crouch_Idle.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Dude/Animations/Unarmed/Sneak/Lyra_Unarmed_Crouch_Walk_Bwd.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Dude/Animations/Unarmed/Sneak/Lyra_Unarmed_Crouch_Walk_Fwd.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Dude/Animations/Unarmed/Sneak/Lyra_Unarmed_Crouch_Walk_Left.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Dude/Animations/Unarmed/Sneak/Lyra_Unarmed_Crouch_Walk_Right.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Dude/Input/Actions/IA_Aim.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Dude/Input/Actions/IA_AimStop.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Dude/Input/Actions/IA_Attack.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Dude/Input/Actions/IA_AttackStop.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Dude/Input/Actions/IA_Block.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Dude/Input/Actions/IA_BlockStop.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Dude/Input/Actions/IA_Cache.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Dude/Input/Actions/IA_Contact.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Dude/Input/Actions/IA_Jump.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Dude/Input/Actions/IA_Light.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Dude/Input/Actions/IA_Pause.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Dude/Input/Actions/IA_Ready.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Dude/Input/Actions/IA_Reload.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Dude/Input/Actions/IA_Sneak.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/GAS/Effects/Dude/Bonuses/GE_GetOffMe.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/GAS/Effects/Dude/Bonuses/GE_TakeItAllIn.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/GAS/Effects/Dude/Bonuses/GE_Vaccinated.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/GAS/Effects/Dude/Bonuses/GE_WeightOfTheWorld.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/GAS/Effects/Dude/Bonuses/GE_YouAreWhatYouGetHitBy.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/GAS/Effects/Dude/Primary/Acumen/GE_AcumenLevelDown.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/GAS/Effects/Dude/Primary/Health/GE_HealthLevelDown.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/GAS/Effects/Dude/Primary/Muscle/GE_MuscleLevelDown.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/GAS/Effects/Dude/Primary/Nerve/GE_NerveLevelDown.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/GAS/Effects/Dude/Primary/Utility/GE_UtilityLevelDown.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Since/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Since/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Since/Dude/Animations/ABP_Dude.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Since/Dude/Animations/ABP_Dude.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Since/Dude/BP_Dude.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Since/Dude/BP_Dude.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Since/Dude/Input/DA_DudeInputConfig.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Since/Dude/Input/DA_DudeInputConfig.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Since/Dude/Input/IMC_DudeContext.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Since/Dude/Input/IMC_DudeContext.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Since/GAS/Effects/Dude/Primary/Acumen/GE_AcumenLevelUp.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Since/GAS/Effects/Dude/Primary/Acumen/GE_AcumenLevelUp.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Since/GAS/Effects/Dude/Primary/Health/GE_HealthLevelUp.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Since/GAS/Effects/Dude/Primary/Health/GE_HealthLevelUp.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Since/GAS/Effects/Dude/Primary/Muscle/GE_MuscleLevelUp.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Since/GAS/Effects/Dude/Primary/Muscle/GE_MuscleLevelUp.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Since/GAS/Effects/Dude/Primary/Nerve/GE_NerveLevelUp.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Since/GAS/Effects/Dude/Primary/Nerve/GE_NerveLevelUp.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Since/GAS/Effects/Dude/Primary/Utility/GE_UtilityLevelUp.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Since/GAS/Effects/Dude/Primary/Utility/GE_UtilityLevelUp.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Since/Private/Dude/Dude.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Since/Private/Dude/Dude.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Since/Private/GAS/DerivedSet.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Since/Private/GAS/DerivedSet.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Since/Private/GAS/PrimarySet.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Since/Private/GAS/PrimarySet.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Since/Private/GAS/Talents.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Since/Private/GAS/Talents.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Since/Public/Dude/Dude.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Since/Public/Dude/Dude.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Since/Public/Dude/DudeInputConfig.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Since/Public/Dude/DudeInputConfig.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Since/Public/GAS/Bonuses.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Since/Public/GAS/Bonuses.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Since/Public/GAS/DerivedSet.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Since/Public/GAS/DerivedSet.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Since/Public/GAS/PrimarySet.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Since/Public/GAS/PrimarySet.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Since/Public/GAS/Talents.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Since/Public/GAS/Talents.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,16 +93,17 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="cidr-memory-view://7" root0="FORCE_HIGHLIGHTING" />
+    <setting file="cidr-memory-view://8" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.6/Engine/Source/Runtime/Engine/Classes/GameFramework/Character.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.6/Engine/Source/Runtime/Engine/Classes/GameFramework/Pawn.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.6/Engine/Source/Runtime/Engine/Private/GameStateBase.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.6/Engine/Source/Runtime/Engine/Public/DrawDebugHelpers.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.6/Engine/Source/Runtime/GameplayTags/Classes/GameplayTagAssetInterface.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Since/Private/Bot/Bot.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Since/Private/Core/DudeController.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Since/Private/Core/SinceGameModeBase.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Since/Private/Dude/Dude.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/Since/Private/Dude/DudeInputConfig.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Since/Private/Dude/DudeInputConfig.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Since/Private/GAS/Bonuses.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Since/Private/GAS/DerivedSet.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Since/Private/GAS/PrimarySet.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -64,23 +131,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "C/C++ Project.Since.executor": "Debug",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;C/C++ Project.Since.executor&quot;: &quot;Debug&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="C/C++ Project.Since">
     <configuration name="Since" type="CppProject" factoryName="C++ Project">
       <configuration_1 setup="1">
@@ -183,7 +250,10 @@
       <option name="presentableId" value="Default" />
       <updated>1750816310230</updated>
       <workItem from="1750816311535" duration="14660000" />
-      <workItem from="1750865387337" duration="22743000" />
+      <workItem from="1750865387337" duration="26875000" />
+      <workItem from="1750907919059" duration="1285000" />
+      <workItem from="1750954952363" duration="6467000" />
+      <workItem from="1750969237446" duration="7814000" />
     </task>
     <servers />
   </component>

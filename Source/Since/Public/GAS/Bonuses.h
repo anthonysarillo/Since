@@ -23,12 +23,12 @@ public:
 
 	// Bonuses - (Perks in Fallout)
 	UPROPERTY(BlueprintReadOnly, Category = "Attributes")
-	FGameplayAttributeData Vaccinated; // HitPoints Modifier - HitPointsMax - Permanent
+	FGameplayAttributeData Vaccinated; // HitPoints Modifier - HitPointsMax - Permanent - 25
 	ATTRIBUTE_ACCESSORS(UBonuses, Vaccinated)
 
 	UPROPERTY(BlueprintReadOnly, Category = "Attributes")
-	FGameplayAttributeData YouAreWhatYouEat; // HitPoints Modifier - HitPointsMax - Permanent
-	ATTRIBUTE_ACCESSORS(UBonuses, YouAreWhatYouEat)
+	FGameplayAttributeData YouAreWhatYouGetHitBy; // HitPoints Modifier - HitPointsMax - Permanent - 50
+	ATTRIBUTE_ACCESSORS(UBonuses, YouAreWhatYouGetHitBy)
 
 	UPROPERTY(BlueprintReadOnly, Category = "Attributes")
 	FGameplayAttributeData GetOffMe; // Threshold Modifier - Threshold - Permanent
@@ -42,6 +42,7 @@ public:
 	FGameplayAttributeData WeightOfTheWorld; // BackPack Modifier - BackPackMax - Permanent
 	ATTRIBUTE_ACCESSORS(UBonuses, WeightOfTheWorld)
 
+	// pickup where i left off
 	UPROPERTY(BlueprintReadOnly, Category = "Attributes")
 	FGameplayAttributeData PluggedIn; // Energy Modifier - EnergyMax - Permanent
 	ATTRIBUTE_ACCESSORS(UBonuses, PluggedIn)

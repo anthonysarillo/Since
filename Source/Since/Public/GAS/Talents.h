@@ -22,6 +22,9 @@ public:
 	// Constructor
 	UTalents();
 
+	// Overrides
+	virtual void PostGameplayEffectExecute(const struct FGameplayEffectModCallbackData& Data) override;
+
 	// Talents - (Skills in Fallout)
 	UPROPERTY(BlueprintReadOnly, Category = "Attributes")
 	FGameplayAttributeData Fisticuffs;

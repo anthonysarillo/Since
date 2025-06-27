@@ -93,7 +93,20 @@ protected:
 	// Enhanced Input
 	void Move(const FInputActionInstance& Instance);
 	void Look(const FInputActionValue& InputValue);
-
+	void Contact();
+	void Block();
+	void BlockStop();
+	void Aim();
+	void AimStop();
+	void Attack();
+	void AttackStop();
+	void Ready();
+	void Reload();
+	void Sneak();
+	void Cache();
+	void Pause();
+	void Light();
+	
 	// SpringArm
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Camera")
 	TObjectPtr<USpringArmComponent> SpringArm;
