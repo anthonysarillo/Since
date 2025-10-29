@@ -2,26 +2,22 @@
 
 
 #include "Inventory/InventoryComponent.h"
+#include "Net/UnrealNetwork.h"
 #include "UI/InventoryBase.h"
 
 
-
-UInventoryComponent::UInventoryComponent()
+UInventoryComponent::UInventoryComponent() : InventoryList(this)
 {
 	PrimaryComponentTick.bCanEverTick = false;
-
-	
+	SetIsReplicatedByDefault(true);
+	bReplicateUsingRegisteredSubObjectList = true;
 }
 
-void UInventoryComponent::TryAddItem(UItemComponent* ItemComponent)
+void UInventoryComponent::GetLifetimeReplicatedProps(TArray<class FLifetimeProperty>& OutLifetimeProps) const
 {
-	FSlotAvailabilityResult Result = InventoryMenu->HasRoomForItem(ItemComponent);
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 
-	if (Result.TotalRoomToFill == 0)
-	{
-		OnMaxBackpack.Broadcast();
-	}
-	// Actually add the Item to the Inventory
+	DOREPLIFETIME(ThisClass, InventoryList);
 }
 
 void UInventoryComponent::BeginPlay()
@@ -81,6 +77,60 @@ void UInventoryComponent::ToggleInventoryMenu()
 		OpenInventoryMenu();
 	}
 }
+
+void UInventoryComponent::TryAddItem(UItemComponent* ItemComponent)
+{
+	FSlotAvailabilityResult Result = InventoryMenu->HasRoomForItem(ItemComponent);
+
+	if (Result.TotalRoomToFill == 0)
+	{
+		OnMaxBackpack.Broadcast();
+		return;
+	}
+
+	if (Result.Item.IsValid() && Result.bStackable)
+	{
+		// Add stacks to an item that already exists
+		// we only want to update the stack count
+		// not create a new item of this type
+		Server_AddStacksToItem(ItemComponent, Result.TotalRoomToFill, Result.Remainder);
+	}
+	else if (Result.TotalRoomToFill > 0)
+	{
+		// This item type doesn't exist in the inventory
+		// create a new one and update all pertinent slots
+		Server_AddNewItem(ItemComponent, Result.bStackable ? Result.TotalRoomToFill : 0);
+	}
+}
+
+void UInventoryComponent::Server_AddNewItem_Implementation(UItemComponent* ItemComponent, int32 StackCount)
+{
+	UInventoryItem* NewItem = InventoryList.AddEntry(ItemComponent);
+
+	if (GetOwner()->GetNetMode() == NM_ListenServer || GetOwner()->GetNetMode() == NM_Standalone)
+	{
+		OnItemAdded.Broadcast(NewItem);
+	}
+
+	// Destroy()
+}
+
+void UInventoryComponent::Server_AddStacksToItem_Implementation(UItemComponent* ItemComponent, int32 StackCount,
+	int32 Remainder)
+{
+	
+}
+
+void UInventoryComponent::AddRepSubObj(UObject* SubObj)
+{
+	if (IsUsingRegisteredSubObjectList() && IsReadyForReplication() && IsValid(SubObj))
+	{
+		AddReplicatedSubObject(SubObj);
+	}
+}
+
+
+
 
 
 

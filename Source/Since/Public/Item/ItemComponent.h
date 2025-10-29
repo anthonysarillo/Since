@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "ItemManifest.h"
 #include "Components/ActorComponent.h"
 #include "ItemComponent.generated.h"
 
@@ -13,15 +14,15 @@ class SINCE_API UItemComponent : public UActorComponent
 	GENERATED_BODY()
 
 public:
-	// Sets default values for this component's properties
 	UItemComponent();
 
-protected:
-	// Called when the game starts
-	virtual void BeginPlay() override;
+	virtual void GetLifetimeReplicatedProps(TArray<class FLifetimeProperty>& OutLifetimeProps) const override;
 
-public:
-	// Called every frame
-	virtual void TickComponent(float DeltaTime, ELevelTick TickType,
-	                           FActorComponentTickFunction* ThisTickFunction) override;
+	FItemManifest GetItemManifest() const { return ItemManifest; };
+
+private:
+	UPROPERTY(EditAnywhere, Category="Since|Inventory", Replicated)
+	FItemManifest ItemManifest;
+	
+	
 };

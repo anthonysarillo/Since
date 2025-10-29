@@ -4,9 +4,13 @@
 
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
+#include "Item/ItemManifest.h"
 #include "Types/GridTypes.h"
 #include "InventoryGrid.generated.h"
 
+class USlottedItem;
+class UItemComponent;
+class UInventoryComponent;
 class UScrollBox;
 class UCanvasPanel;
 class UInventoryGridSlot;
@@ -21,10 +25,28 @@ class SINCE_API UInventoryGrid : public UUserWidget
 public:
 	virtual void NativeOnInitialized() override;
 	
-	EItemCategory GetItemCategory() const { return ItemCategory; };
+	EItemCategory GetItemCategory() const { return ItemCategory; }
+	FSlotAvailabilityResult HasRoomForItem(const UItemComponent* ItemComponent);
+	
+	UFUNCTION()
+	void AddItem(UInventoryItem* Item);
 
 private:
-	void ConstructInventoryGrid();
+	TWeakObjectPtr<UInventoryComponent> InventoryComponent;
+	
+	//void ConstructInventoryGrid();
+
+	FSlotAvailabilityResult HasRoomForItem(const UInventoryItem* Item);
+	FSlotAvailabilityResult HasRoomForItem(const FItemManifest& Manifest);
+	void AddItemToIndices(const FSlotAvailabilityResult& Result, UInventoryItem* NewItem);
+	void AddItemAtIndex(UInventoryItem* Item, const int32 Index, const bool bStackable, const int32 StackAmount);
+	USlottedItem* CreateSlottedItem(UInventoryItem* Item,
+		const bool bStackable,
+		const int32 StackAmount,
+		const FGridFragment* GridFragment,
+		//const FWidgetFragment* WidgetFragment,
+		const int32 Index);
+	void AddSlottedItemToScrollBox(const int32 Index, const FGridFragment* GridFragment, USlottedItem* SlottedItem) const;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess="true"), Category="Since|Inventory")
 	EItemCategory ItemCategory;
@@ -35,11 +57,14 @@ private:
 	UPROPERTY(EditDefaultsOnly, Category="Since|Inventory")
 	TSubclassOf<UInventoryGridSlot> InventoryGridSlotClass;
 
-	//UPROPERTY(meta=(BindWidget))
-	//TObjectPtr<UCanvasPanel> InventoryGridCanvasPanel;
-
 	UPROPERTY(meta=(BindWidget))
 	TObjectPtr<UScrollBox> InventoryGridScrollBox;
+
+	UPROPERTY(EditDefaultsOnly, Category="Since|Inventory")
+	TSubclassOf<USlottedItem> SlottedItemClass;
+
+	UPROPERTY()
+	TMap<int32, TObjectPtr<USlottedItem>> SlottedItems;
 	
 	UPROPERTY(EditAnywhere, Category="Since|Inventory")
 	int32 Rows;
@@ -47,4 +72,6 @@ private:
 	int32 Columns;
 	UPROPERTY(EditAnywhere, Category="Since|Inventory")
 	float TileSize;
+
+	bool MatchesCategory(const UInventoryItem* Item) const;
 };

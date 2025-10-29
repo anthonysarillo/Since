@@ -4,6 +4,9 @@
 #include "UI/InventoryMenu.h"
 #include "Components/Button.h"
 #include "Components/WidgetSwitcher.h"
+#include "Item/ItemComponent.h"
+#include "Since/Since.h"
+#include "Statics/SinceStatics.h"
 #include "UI/AttributeGrid.h"
 #include "UI/InventoryGrid.h"
 
@@ -25,7 +28,22 @@ void UInventoryMenu::NativeOnInitialized()
 
 FSlotAvailabilityResult UInventoryMenu::HasRoomForItem(UItemComponent* ItemComponent) const
 {
-	return FSlotAvailabilityResult();
+	switch (USinceStatics::GetItemCategoryFromItemComponent(ItemComponent))
+	{
+	case EItemCategory::Weapon:
+		return WeaponsGrid->HasRoomForItem(ItemComponent);
+	case EItemCategory::Outfit:
+		return OutfitGrid->HasRoomForItem(ItemComponent);
+	case EItemCategory::Provision:
+		return ProvisionsGrid->HasRoomForItem(ItemComponent);
+	case EItemCategory::Misc:
+		return MiscGrid->HasRoomForItem(ItemComponent);
+	case EItemCategory::Ammo:
+		return AmmoGrid->HasRoomForItem(ItemComponent);
+	default:
+		UE_LOG(LogSince, Error, TEXT("ItemComponent doesn't have a valid Item Category."))
+		return FSlotAvailabilityResult();
+	}
 }
 
 void UInventoryMenu::ShowHumanGrid()

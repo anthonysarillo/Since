@@ -4,6 +4,7 @@
 #include "Inventory/SinceFastArray.h"
 #include "Inventory/InventoryComponent.h"
 #include "Item/InventoryItem.h"
+#include "Item/ItemComponent.h"
 
 
 TArray<UInventoryItem*> FInventoryFastArray::GetAllItems()
@@ -42,7 +43,19 @@ void FInventoryFastArray::PostReplicatedAdd(const TArrayView<int32> AddedIndices
 
 UInventoryItem* FInventoryFastArray::AddEntry(UItemComponent* ItemComponent)
 {
-	return nullptr;
+	check(OwnerComponent);
+	AActor* OwningActor = OwnerComponent->GetOwner();
+	check(OwningActor->HasAuthority());
+	UInventoryComponent* InventoryComponent = Cast<UInventoryComponent>(OwnerComponent);
+	if (!IsValid(InventoryComponent)) return nullptr;
+
+	FInventoryEntry& NewEntry = Entries.AddDefaulted_GetRef();
+	NewEntry.Item = ItemComponent->GetItemManifest().Manifest(OwningActor);
+
+	InventoryComponent->AddRepSubObj(NewEntry.Item);
+	MarkItemDirty(NewEntry);
+
+	return NewEntry.Item;
 }
 
 UInventoryItem* FInventoryFastArray::AddEntry(UInventoryItem* Item)

@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "SinceFastArray.h"
 #include "Components/ActorComponent.h"
 #include "InventoryComponent.generated.h"
 
@@ -21,10 +22,19 @@ class SINCE_API UInventoryComponent : public UActorComponent
 public:
 	UInventoryComponent();
 
+	virtual void GetLifetimeReplicatedProps(TArray<class FLifetimeProperty>& OutLifetimeProps) const override;
+
 	UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly, Category="Since|Inventory")
 	void TryAddItem(UItemComponent* ItemComponent);
 
+	UFUNCTION(Server, Reliable)
+	void Server_AddNewItem(UItemComponent* ItemComponent, int32 StackCount);
+	UFUNCTION(Server, Reliable)
+	void Server_AddStacksToItem(UItemComponent* ItemComponent, int32 StackCount, int32 Remainder);
+
 	void ToggleInventoryMenu();
+
+	void AddRepSubObj(UObject* SubObj);
 
 	FInventoryItemChange OnItemAdded;
 	FInventoryItemChange OnItemRemoved;
@@ -35,6 +45,9 @@ protected:
 
 private:
 	void ConstructInventory();
+
+	UPROPERTY(Replicated)
+	FInventoryFastArray InventoryList;
 
 	TWeakObjectPtr<APlayerController> OwningController;
 
@@ -50,3 +63,5 @@ private:
 	
 	
 };
+
+
