@@ -1,31 +1,17 @@
 ﻿// Since - 2025
 
 
-#include "Since/Public/Character/Bot.h"
+#include "Core/SincePlayerState.h"
 #include "GAS/SinceAbilitySystemComponent.h"
 #include "GAS/SinceAttributeSet.h"
 
-
-ABot::ABot()
+ASincePlayerState::ASincePlayerState()
 {
-	PrimaryActorTick.bCanEverTick = false;
+	SetNetUpdateFrequency(100.f);
 
 	AbilitySystemComponent = CreateDefaultSubobject<USinceAbilitySystemComponent>("AbilitySystemComponent");
 	AbilitySystemComponent->SetIsReplicated(true);
-	AbilitySystemComponent->SetReplicationMode(EGameplayEffectReplicationMode::Minimal);
+	AbilitySystemComponent->SetReplicationMode(EGameplayEffectReplicationMode::Mixed);
 
 	AttributeSet = CreateDefaultSubobject<USinceAttributeSet>("AttributeSet");
-
-	
 }
-
-void ABot::BeginPlay()
-{
-	Super::BeginPlay();
-
-	AbilitySystemComponent->InitAbilityActorInfo(this, this);
-	
-}
-
-
-

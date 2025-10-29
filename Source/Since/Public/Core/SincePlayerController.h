@@ -6,6 +6,7 @@
 #include "GameFramework/PlayerController.h"
 #include "SincePlayerController.generated.h"
 
+class UAbilitySystemComponent;
 class UInventoryComponent;
 class UHeadsUpDisplay;
 class UInputMappingContext;
@@ -60,7 +61,7 @@ private:
 	void Look(const FInputActionValue& Value);
 
 	/** HeadsUpDisplay */
-	void CreateHeadsUpDisplay();
+	void CreateHeadsUpDisplay(APlayerController* PC, APlayerState* PS, UAbilitySystemComponent* ASC, UAttributeSet* AS);
 	
 	UPROPERTY()
 	TObjectPtr<UHeadsUpDisplay> HeadsUpDisplay;

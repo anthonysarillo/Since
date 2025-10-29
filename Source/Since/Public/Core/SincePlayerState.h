@@ -3,20 +3,22 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/Character.h"
 #include "AbilitySystemInterface.h"
-#include "SinceCharacter.generated.h"
+#include "GameFramework/PlayerState.h"
+#include "SincePlayerState.generated.h"
 
 class UAttributeSet;
 class UAbilitySystemComponent;
-
-UCLASS(Abstract)
-class SINCE_API ASinceCharacter : public ACharacter, public IAbilitySystemInterface
+/**
+ * 
+ */
+UCLASS()
+class SINCE_API ASincePlayerState : public APlayerState, public IAbilitySystemInterface
 {
 	GENERATED_BODY()
 
 public:
-	ASinceCharacter();
+	ASincePlayerState();
 
 	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override { return AbilitySystemComponent; }
 	UAttributeSet* GetAttributeSet() const { return AttributeSet; }

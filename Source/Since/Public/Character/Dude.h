@@ -17,11 +17,17 @@ class SINCE_API ADude : public ASinceCharacter
 public:
 	ADude();
 
+	virtual void PossessedBy(AController* NewController) override;
+	virtual void OnRep_PlayerState() override;
+
 	USpringArmComponent* GetSpringArm() const { return SpringArm; }
 	UCameraComponent* GetThirdPersonCamera() const { return ThirdPersonCamera; }
 	UCameraComponent* GetFirstPersonCamera() const { return FirstPersonCamera; }
+	
 
 private:
+	void InitAbilityActorInfo();
+	
 	/** Camera boom positioning the camera behind the character */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Since|Camera", meta = (AllowPrivateAccess = "true"))
 	TObjectPtr<USpringArmComponent> SpringArm;

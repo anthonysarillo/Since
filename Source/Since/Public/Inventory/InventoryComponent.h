@@ -33,6 +33,7 @@ public:
 	void Server_AddStacksToItem(UItemComponent* ItemComponent, int32 StackCount, int32 Remainder);
 
 	void ToggleInventoryMenu();
+	bool IsInventoryMenuOpen() const { return bInventoryMenuOpen; };
 
 	void AddRepSubObj(UObject* SubObj);
 

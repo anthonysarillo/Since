@@ -12,24 +12,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0b1ced76-b60d-4931-aeec-883f463ad84e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Content/Since/Core/BP_SincePlayerState.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/Effect/BP_HitPointsBuff.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/UI/HeadsUpDisplay/Bar/WBP_EnergyBar.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Since/UI/HeadsUpDisplay/Bar/WBP_HitPointsBar.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/Since/Private/Ability/SinceGameplayAbility.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/Since/Private/Core/SincePlayerState.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/Since/Private/Effect/SinceEffectActor.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/Since/Private/Effect/SinceGameplayEffect.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/Since/Private/GAS/SinceAbilitySystemComponent.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/Since/Private/GAS/SinceAttributeSet.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/Since/Public/Ability/SinceGameplayAbility.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/Since/Public/Core/SincePlayerState.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/Since/Public/Effect/SinceEffectActor.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/Since/Public/Effect/SinceGameplayEffect.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/Since/Public/GAS/SinceAbilitySystemComponent.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/Since/Public/GAS/SinceAttributeSet.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Since/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Since/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Since/Item/Actor/BP_TestAmmo.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Since/Item/Actor/BP_TestAmmo.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Since/Item/Actor/BP_TestWeapon.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Since/Item/Actor/BP_TestWeapon.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Since/Core/BP_SinceGameModeBase.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Since/Core/BP_SinceGameModeBase.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Since/Inventory/BP_InventoryComponent.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Since/Inventory/BP_InventoryComponent.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Since/Map/SinceProtoMap.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Since/Map/SinceProtoMap.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Since/UI/InventoryMenu/Grid/Inventory/WBP_ProvisionsGrid.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Since/UI/InventoryMenu/Grid/Inventory/WBP_ProvisionsGrid.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Since/UI/Item/Ammo/WBP_TestAmmo.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Since/UI/Item/Ammo/WBP_TestAmmo.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Since/UI/Item/Misc/WBP_TestMisc.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Since/UI/Item/Misc/WBP_TestMisc.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Since/UI/Item/Outfit/WBP_TestOutfit.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Since/UI/Item/Outfit/WBP_TestOutfit.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Since/UI/Item/Provision/WBP_TestProvision.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Since/UI/Item/Provision/WBP_TestProvision.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Since/UI/Item/Weapon/WBP_TestWeapon.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Since/UI/Item/Weapon/WBP_TestWeapon.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Since/Private/Item/FragmentTags.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Since/Private/Item/FragmentTags.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Since/Private/UI/InventoryGrid.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Since/Private/UI/InventoryGrid.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Since/Private/UI/SlottedItem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Since/Private/UI/SlottedItem.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Since/Public/Item/FragmentTags.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Since/Public/Item/FragmentTags.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Since/Public/Item/ItemFragment.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Since/Public/Item/ItemFragment.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Since/Public/Item/ItemManifest.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Since/Public/Item/ItemManifest.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Since/Public/UI/InventoryGrid.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Since/Public/UI/InventoryGrid.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Since/Public/UI/SlottedItem.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Since/Public/UI/SlottedItem.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Since/UI/HeadsUpDisplay/Contact/WBP_ContactMessage.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Since/UI/HeadsUpDisplay/Contact/WBP_ContactMessage.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Since/UI/HeadsUpDisplay/Contact/WBP_MaxBackpackMessage.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Since/UI/HeadsUpDisplay/Contact/WBP_MaxBackpackMessage.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Since/UI/HeadsUpDisplay/WBP_HeadsUpDisplay.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Since/UI/HeadsUpDisplay/WBP_HeadsUpDisplay.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Since.uproject" beforeDir="false" afterPath="$PROJECT_DIR$/Since.uproject" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Since/Private/Character/Bot.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Since/Private/Character/Bot.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Since/Private/Character/Dude.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Since/Private/Character/Dude.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Since/Private/Character/SinceCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Since/Private/Character/SinceCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Since/Private/Core/SincePlayerController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Since/Private/Core/SincePlayerController.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Since/Public/Character/Bot.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Since/Public/Character/Bot.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Since/Public/Character/Dude.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Since/Public/Character/Dude.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Since/Public/Character/SinceCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Since/Public/Character/SinceCharacter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Since/Public/Core/SincePlayerController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Since/Public/Core/SincePlayerController.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Since/Public/Inventory/InventoryComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Since/Public/Inventory/InventoryComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Since/Public/UI/HeadsUpDisplay.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Since/Public/UI/HeadsUpDisplay.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,49 +71,17 @@
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="cidr-memory-view://53" root0="FORCE_HIGHLIGHTING" />
+    <setting file="cidr-memory-view://10" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.6/Engine/Source/Editor/Documentation/Private/SDocumentationToolTip.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.6/Engine/Source/Editor/UMGEditor/Private/WidgetBlueprintCompiler.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.6/Engine/Source/Runtime/Core/Public/Templates/Tuple.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.6/Engine/Source/Runtime/Core/Public/UObject/WeakObjectPtrTemplates.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.6/Engine/Source/Runtime/CoreUObject/Private/UObject/WeakObjectPtr.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.6/Engine/Source/Runtime/UMG/Private/Components/CanvasPanelSlot.cpp" root0="FORCE_HIGHLIGHTING" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="34hDUvO0xsDxTKfQR05SHFER4xs" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -109,9 +93,10 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "C/C++ Project.Since.executor": "Debug",
+    "C/C++ Project.Since.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -208,7 +193,10 @@
       <method v="2" />
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
-      <deployment type="dockerfile" />
+      <deployment type="dockerfile">
+        <settings />
+      </deployment>
+      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
       <method v="2" />
     </configuration>
   </component>
@@ -219,7 +207,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1761656929426</updated>
-      <workItem from="1761656930882" duration="50702000" />
+      <workItem from="1761656930882" duration="50732000" />
+      <workItem from="1761736973754" duration="738000" />
+      <workItem from="1761760934159" duration="8716000" />
     </task>
     <servers />
   </component>

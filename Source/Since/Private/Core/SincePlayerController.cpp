@@ -94,10 +94,21 @@ void ASincePlayerController::ToggleInventory()
 
 	if (!InventoryComponent.IsValid()) return;
 	InventoryComponent->ToggleInventoryMenu();
+
+	if (InventoryComponent->IsInventoryMenuOpen())
+	{
+		HeadsUpDisplay->SetVisibility(ESlateVisibility::Hidden);
+	}
+	else
+	{
+		HeadsUpDisplay->SetVisibility(ESlateVisibility::HitTestInvisible);
+	}
 }
 
-void ASincePlayerController::CreateHeadsUpDisplay()
+void ASincePlayerController::CreateHeadsUpDisplay(APlayerController* PC, APlayerState* PS, UAbilitySystemComponent* ASC, UAttributeSet* AS)
 {
+	check(HeadsUpDisplayClass);
+	
 	if (!IsLocalController()) return;
 	HeadsUpDisplay = CreateWidget<UHeadsUpDisplay>(this, HeadsUpDisplayClass);
 	if (IsValid(HeadsUpDisplay))
