@@ -9,6 +9,9 @@
 class UTextBlock;
 class UImage;
 class UMaxBackpackMessage;
+
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnHitPointsChanged,float, NewHitPoints);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnHitPointsMaxChanged,float, NewHitPointsMax);
 /**
  * 
  */
@@ -19,6 +22,12 @@ class SINCE_API UHeadsUpDisplay : public UUserWidget
 
 public:
 	virtual void NativeOnInitialized() override;
+
+	UPROPERTY(BlueprintAssignable, Category="Since|GAS")
+	FOnHitPointsChanged OnHitPointsChanged;
+
+	UPROPERTY(BlueprintAssignable, Category="Since|GAS")
+	FOnHitPointsMaxChanged OnHitPointsMaxChanged;
 
 	UFUNCTION(BlueprintImplementableEvent, Category="Since|Contact")
 	void ShowContactMessage(const FText& Message);
