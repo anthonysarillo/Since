@@ -28,6 +28,9 @@ struct SINCE_API FItemManifest
 
 	template<typename FragmentType> requires std::derived_from<FragmentType, FItemFragment>
 	const FragmentType* GetFragmentOfTypeWithTag(const FGameplayTag& FragmentTag) const;
+
+	template<typename FragmentType> requires std::derived_from<FragmentType, FItemFragment>
+	const FragmentType* GetFragmentOfType() const;
 	
 private:
 	UPROPERTY(EditAnywhere, Category="Since|Inventory,", meta=(ExcludeBaseStruct))
@@ -49,6 +52,19 @@ requires std::derived_from<FragmentType, FItemFragment>
 		if (const FragmentType* FragmentPtr = Fragment.GetPtr<FragmentType>())
 		{
 			if (!FragmentPtr->GetFragmentTag().MatchesTagExact(FragmentTag)) continue;
+			return FragmentPtr;
+		}
+	}
+	return nullptr;
+}
+
+template <typename FragmentType> requires std::derived_from<FragmentType, FItemFragment>
+const FragmentType* FItemManifest::GetFragmentOfType() const
+{
+	for (const TInstancedStruct<FItemFragment>& Fragment : Fragments)
+	{
+		if (const FragmentType* FragmentPtr = Fragment.GetPtr<FragmentType>())
+		{
 			return FragmentPtr;
 		}
 	}

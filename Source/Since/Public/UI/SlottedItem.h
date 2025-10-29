@@ -29,14 +29,17 @@ public:
 	void SetGridDimensions(FIntPoint Dimensions) { GridDimensions = Dimensions; }
 	UInventoryItem* GetInventoryItem() const { return InventoryItem.Get(); }
 	void SetInventoryItem(UInventoryItem* Item);
+	void UpdateStackCount(int32 StackCount);
 	
-
 private:
 	UPROPERTY(meta=(BindWidget))
 	TObjectPtr<UButton> SlottedItemButton;
 
 	UPROPERTY(meta=(BindWidget))
 	TObjectPtr<UTextBlock> SlottedItemText;
+
+	UPROPERTY(meta=(BindWidget))
+	TObjectPtr<UTextBlock> SlottedItemStackCount;
 
 	int32 GridIndex;
 	FIntPoint GridDimensions;

@@ -70,4 +70,20 @@ private:
 	FMargin WidgetPadding {0,0,0,0};
 };
 
+USTRUCT(BlueprintType)
+struct FStackableFragment : public FItemFragment
+{
+	GENERATED_BODY()
+
+	int32 GetMaxStackSize() const { return MaxStackSize; }
+	int32 GetStackCount() const { return StackCount; }
+
+private:
+	UPROPERTY(EditAnywhere, Category="Since|Inventory")
+	int32 MaxStackSize {1};
+
+	UPROPERTY(EditAnywhere, Category="Since|Inventory")
+	int32 StackCount {1};
+};
+
 

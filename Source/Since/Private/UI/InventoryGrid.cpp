@@ -7,7 +7,6 @@
 #include "Components/CanvasPanelSlot.h"
 #include "Components/ScrollBox.h"
 #include "Components/ScrollBoxSlot.h"
-#include "Evaluation/PreAnimatedState/MovieScenePreAnimatedCaptureSources.h"
 #include "Inventory/InventoryComponent.h"
 #include "Item/FragmentTags.h"
 #include "Item/InventoryItem.h"
@@ -42,15 +41,52 @@ FSlotAvailabilityResult UInventoryGrid::HasRoomForItem(const UInventoryItem* Ite
 FSlotAvailabilityResult UInventoryGrid::HasRoomForItem(const FItemManifest& Manifest)
 {
 	FSlotAvailabilityResult Result;
-	Result.TotalRoomToFill = 1;
 
-	FSlotAvailability SlotAvailability;
-	SlotAvailability.AmountToFill = 1;
-	SlotAvailability.Index = 0;
+	// Determine if the Item is stackable.
+	const FStackableFragment* StackableFragment = Manifest.GetFragmentOfType<FStackableFragment>();
+	Result.bStackable = StackableFragment != nullptr;
+	// Determine how many stacks to add.
+	const int32 MaxStackSize = StackableFragment ? StackableFragment->GetMaxStackSize() : 1;
+	int32 AmountToFill = StackableFragment ? StackableFragment->GetStackCount() : 1;
 
-	Result.SlotAvailabilities.Add(MoveTemp(SlotAvailability));
-	
+	TSet<int32> CheckedIndices;
+	// for each slotted item
+	for (const auto& SlottedItem : SlottedItems)
+	{
+		// if we dont have any more to fill, break out of the loop
+		if (AmountToFill == 0) break;
+		// is this index claimed yet?
+		 
+		// can the item fit here? (i.e, is it out of grid bounds)
+		
+		
+		// Is there room at this index? (are there other items in the way)
+		// check any other important conditions
+			// index claimed?
+			// has valid item?
+			// is this item the same type as item were trying to add?
+			// if so, is this a stackable item?
+			// if stackable, is this slot at maxstacksize already?
+		// How much to fill?
+		// Update the amount left to fill
+	}
+		
+	// how much is the remainder?
+
 	return Result;
+}
+
+bool UInventoryGrid::HasRoomAtIndex(const USlottedItem* SlottedItem, const FIntPoint& Dimensions)
+{
+	bool bHasRoomAtIndex = true;
+	
+	return bHasRoomAtIndex;
+}
+
+FIntPoint UInventoryGrid::GetItemDimensions(const FItemManifest& Manifest) const
+{
+	const FGridFragment* GridFragment = Manifest.GetFragmentOfType<FGridFragment>();
+	return GridFragment->GetGridSize();
 }
 
 void UInventoryGrid::AddItem(UInventoryItem* Item)
@@ -90,6 +126,9 @@ USlottedItem* UInventoryGrid::CreateSlottedItem(UInventoryItem* Item, const bool
 	USlottedItem* SlottedItem = CreateWidget<USlottedItem>(GetOwningPlayer(), SlottedItemClass);
 	SlottedItem->SetInventoryItem(Item);
 	SlottedItem->SetGridIndex(Index);
+	SlottedItem->SetIsStackable(bStackable);
+	const int32 StackUpdateAmount = bStackable ? StackAmount : 0;
+	SlottedItem->UpdateStackCount(StackUpdateAmount);
 
 	return SlottedItem;
 }
@@ -104,6 +143,11 @@ void UInventoryGrid::AddSlottedItemToScrollBox(const int32 Index, const FGridFra
 	ScrollBoxSlot->SetHorizontalAlignment(HAlign_Fill);
 	ScrollBoxSlot->SetVerticalAlignment(VAlign_Top);
 	UWidgetStatics::GetPositionFromIndex(Index, Columns);
+}
+
+bool UInventoryGrid::IsIndexClaimed(const TSet<int32>& CheckedIndices, const int32 Index) const
+{
+	return CheckedIndices.Contains(Index);
 }
 
 // void UInventoryGrid::ConstructInventoryGrid()

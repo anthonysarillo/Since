@@ -15,7 +15,7 @@ class UScrollBox;
 class UCanvasPanel;
 class UInventoryGridSlot;
 /**
- * 
+ * Ended on lecture 36 got items adding into scroll boxes with categories
  */
 UCLASS()
 class SINCE_API UInventoryGrid : public UUserWidget
@@ -47,6 +47,9 @@ private:
 		//const FWidgetFragment* WidgetFragment,
 		const int32 Index);
 	void AddSlottedItemToScrollBox(const int32 Index, const FGridFragment* GridFragment, USlottedItem* SlottedItem) const;
+	bool IsIndexClaimed(const TSet<int32>& CheckedIndices, const int32 Index) const;
+	bool HasRoomAtIndex(const USlottedItem* SlottedItem, const FIntPoint& Dimensions);
+	FIntPoint GetItemDimensions(const FItemManifest& Manifest) const;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess="true"), Category="Since|Inventory")
 	EItemCategory ItemCategory;
